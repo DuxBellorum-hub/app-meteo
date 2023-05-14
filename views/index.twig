@@ -29,7 +29,7 @@
 placeSearch({key: `{{key}}`, container: searchInput}).on('change', (e) => {
 console.log(e.result.value)
 const city = e.result.value;
-fetch('http://localhost:3000/' + city).then(() => window.location.replace('/' + city));
+fetch('https://ma-meteo.onrender.com/' + city).then(() => window.location.replace('/' + city));
 });
 		</script>
 

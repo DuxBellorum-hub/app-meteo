@@ -19,9 +19,7 @@ const url = `https://api.tutiempo.net/json/?lan=fr&apid=${process.env.API_KEY}&l
 
 app.get('/', async (req, res) => {
   const location = req.ip;
-  const devLocation = "91.164.96.82";
-  //remplacer devLocation par location
-  await axios(`http://ip-api.com/json/${devLocation}`)
+  await axios(`http://ip-api.com/json/${location}`)
     .then(async (result) => {
       const city = result.data.city;
       const latitude = result.data.lat;
@@ -40,7 +38,10 @@ app.get('/', async (req, res) => {
       let key = process.env.MAP_KEY.toString();
       res.render("searchBar.twig", { key, data, arrHours, dayTwo, dayThree, dayFour, dayFive, daySix, daySeven, key });
     })
-    .catch(e => console.error(e))
+    .catch(e => {
+      console.log(e);
+      res.json({"err": e.message});
+    })
 
 
 });

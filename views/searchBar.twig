@@ -10,7 +10,6 @@
 		<title>Ma météo</title>
 		<link rel="icon" type="image/x-icon" href="/img/favicon.png">
 
-
 	</head>
 	<body>
 		<div class="row d-flex justify-content-center align-items-center">
@@ -32,7 +31,7 @@
 placeSearch({key: `{{key}}`, container: searchInput}).on('change', (e) => {
 console.log(e.result.value)
 const city = e.result.value;
-fetch('http://localhost:3000/' + city).then(() => window.location.replace('/' + city));
+fetch('https://ma-meteo.onrender.com/' + city).then(() => window.location.replace('/' + city));
 });
 		</script>
 	</body>
