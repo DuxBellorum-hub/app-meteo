@@ -1,0 +1,130 @@
+<div class="container-fluid h-50 mx-0 px-0">
+	<div class="row d-flex justify-content-center align-items-center h-100">
+		<div class="col-12 col-md-6 col-lg-6 col-xl-6">
+			<div class="card profile-card-1">
+				<img src="https://images.pexels.com/photos/946351/pexels-photo-946351.jpeg?w=500&h=650&auto=compress&cs=tinysrgb" alt="profile-sample1" class="background"/>
+
+				<img src="https://v5i.tutiempo.net/wi/01/90/{{data.hour_hour.hour1.icon}}.png" alt="profile-image" class="profile"/>
+				<div class="card-content">
+
+					<h2>{{data.locality.name}}</h2>
+					<p class="display-2 my-3">{{data.hour_hour.hour1.temperature}}°C</p>
+					<h5>{{data.hour_hour.hour1.text}}</h5>
+					<h5>Vent:
+						{{data.hour_hour.hour1.wind_direction}}
+						|
+						{{data.hour_hour.hour1.wind}}km/h
+					</h5>
+					<h5>Humidité:
+						{{data.hour_hour.hour1.humidity}}%</h5>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<div class="row d-flex justify-content-center align-items-center">
+	<div class="col-12 col-md-6 col-lg-6 col-xl-6">
+		<div class="card" style="min-height: 150px">
+			<div class="card-body p-4">
+
+				<swiper-container class="mySwiper" space-between="5" slides-per-view="4">
+					{% for h in arrHours %}
+						<swiper-slide>
+							<div>
+								<p class="small">
+									<strong>{{h.temperature}}°C</strong>
+								</p>
+								<i style="color: #ddd;"><img src="https://v5i.tutiempo.net/wi/01/40/{{h.icon}}.png" alt=""></i>
+								<p class="mb-0">
+									<strong>{{h.hour_data}}</strong>
+								</p>
+							</div>
+						</swiper-slide>
+					{% endfor %}
+
+				</swiper-container>
+
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+<section style="overflow-x: hidden;">
+	<div class="container-fluid  h-50 mx-0 px-0">
+		<div class="row d-flex justify-content-center align-items-center h-100">
+			<div class="col-12 col-md-6 col-lg-6 col-xl-6">
+				<div class="card" style="border-radius: 10px;">
+					<div class="card-body p-4 text-center">
+						<div class="d-flex justify-content-between" style="color: #aaa;">
+							<i style="color: #ddd;"><img src="https://v5i.tutiempo.net/wi/01/30/{{data.day2.icon}}.png" alt=""></i>
+							<p class="h5 ">{{dayTwo}}</p>
+							<p class="h5 fw-normal">
+								{{data.day2.temperature_max}}° /
+								{{data.day2.temperature_min}}°
+							</p>
+						</div>
+						<hr>
+						<div class="d-flex justify-content-between" style="color: #aaa;">
+							<i style="color: #ddd;"><img src="https://v5i.tutiempo.net/wi/01/30/{{data.day3.icon}}.png" alt=""></i>
+							<p class="h5 ">{{dayThree}}</p>
+							<p class="h5 fw-normal">
+								{{data.day3.temperature_max}}° /
+								{{data.day3.temperature_min}}°
+							</p>
+						</div>
+						<hr>
+						<div class="d-flex justify-content-between" style="color: #aaa;">
+							<i style="color: #ddd;"><img src="https://v5i.tutiempo.net/wi/01/30/{{data.day4.icon}}.png" alt=""></i>
+							<p class="h5 ">{{dayFour}}</p>
+							<p class="h5 fw-normal">
+								{{data.day4.temperature_max}}° /
+								{{data.day4.temperature_min}}°
+							</p>
+						</div>
+						<hr>
+						<div class="d-flex justify-content-between" style="color: #aaa;">
+							<i style="color: #ddd;"><img src="https://v5i.tutiempo.net/wi/01/30/{{data.day5.icon}}.png" alt=""></i>
+							<p class="h5 ">{{dayFive}}</p>
+							<p class="h5 fw-normal">
+								{{data.day5.temperature_max}}° /
+								{{data.day5.temperature_min}}°
+							</p>
+						</div>
+						<hr>
+						<div class="d-flex justify-content-between" style="color: #aaa;">
+							<i style="color: #ddd;"><img src="https://v5i.tutiempo.net/wi/01/30/{{data.day6.icon}}.png" alt=""></i>
+							<p class="h5 ">{{daySix}}</p>
+							<p class="h5 fw-normal">
+								{{data.day6.temperature_max}}° /
+								{{data.day6.temperature_min}}°
+							</p>
+						</div>
+						<hr>
+						<div class="d-flex justify-content-between" style="color: #aaa;">
+							<i style="color: #ddd;"><img src="https://v5i.tutiempo.net/wi/01/30/{{data.day7.icon}}.png" alt=""></i>
+							<p class="h5 ">{{daySeven}}</p>
+							<p class="h5 fw-normal">
+								{{data.day7.temperature_max}}° /
+								{{data.day7.temperature_min}}°
+							</p>
+						</div>
+
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</section>
+
+<footer class="text-center mt-2 mb-2">
+	<small>
+		Données méteorologiques fournies par https://fr.tutiempo.net
+	</small>
+</footer>
